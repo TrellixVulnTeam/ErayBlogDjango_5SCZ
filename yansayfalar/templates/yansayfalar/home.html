@@ -1,0 +1,12 @@
+{% extends 'post/base.html' %}
+  {% block content %}
+
+  <h1 class="text-center">Portfolio</h1>
+  {% for yan in yansayfalar.all %}
+  <img src="{{yan.yanSayfaResim.url}}" alt="Responsive image" class="img-responsive" style="width:700px;height:300px;margin: 0 auto;" /></br>
+  <h2>{{yan.yanSayfaBaslik}}</h2></br>
+  <p>{{yan.yanSayfaGovde}}</p>
+  <a href="{{yan.yanSayfaLink}}">{{yan.yanSayfaLink}}</a></br></br></br></br><hr>
+  {%endfor%}
+  </br></br>
+{% endblock content %}

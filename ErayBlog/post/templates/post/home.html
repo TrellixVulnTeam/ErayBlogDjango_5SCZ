@@ -1,0 +1,15 @@
+{% extends 'post/base.html' %}
+{% block content %}
+  {% load static %}
+  <img src="{%static "post/home.jpg" %}" class="img-responsive center-block" />
+
+  <hr/>
+  {% for post in posts.all %}
+
+  <p><a href="{% url 'post_ulas' post.id %}" ><h3 class="text-center">{{ post.baslik }}</h3></a><br/></p>
+  <p class="text-center"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.tarihDuzelt }}</p><br/>
+  <a href="{% url 'post_ulas' post.id %}" ><img src="{{ post.resim.url }}" class="img-responsive img-circle center-block" alt="Responsive image" style="width:250px;height:250px;" /></a><br/>
+  <p class="text-center">{{ post.ozet }} <a href="{% url 'post_ulas' post.id %}">devamını oku...</a></p><br/><br/> <hr/>
+
+  {% endfor %}
+  {% endblock content %}
